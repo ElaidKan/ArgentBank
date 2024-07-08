@@ -1,29 +1,35 @@
-import React from 'react'
+import './Formulaire.scss'
+import {useNavigate} from 'react-router-dom'
 
 function Formulaire() {
+    const navigate = useNavigate()
+    const hundelSubmit = (e) => {
+        e.preventDefault()
+        navigate('/account')
+    }
     return (
-        <div class="main bg-dark">
-            <section class="sign-in-content">
-                <i class="fa fa-user-circle sign-in-icon"></i>
-                <h1>Sign In</h1>
-                <form>
-                    <div class="input-wrapper">
-                        <label for="username">Username</label
-                        ><input type="text" id="username" />
-                    </div>
-                    <div class="input-wrapper">
-                        <label for="password">Password</label
-                        ><input type="password" id="password" />
-                    </div>
-                    <div class="input-remember">
-                        <input type="checkbox" id="remember-me" /><label for="remember-me"
-                        >Remember me</label
-                        >
-                    </div>
-                    <a href="./user.html" class="sign-in-button">Sign In</a>
-                    <button class="sign-in-button">Sign In</button>
-                </form>
-            </section>
+        <div className="container-formulaire">
+            <main className="main bg-dark">
+                <section className="sign-in-content">
+                    <i className="fa fa-user-circle sign-in-icon"></i>
+                    <h1>Sign In</h1>
+                    <form onSubmit={hundelSubmit}>
+                        <div className="input-wrapper">
+                            <label for="username">Username</label
+                            ><input type="text" id="username" />
+                        </div>
+                        <div className="input-wrapper">
+                            <label for="password">Password</label
+                            ><input type="password" id="password" />
+                        </div>
+                        <div className="input-remember">
+                            <input type="checkbox" id="remember-me" /><label for="remember-me"
+                            >Remember me</label>
+                        </div>
+                        <button className="sign-in-button">Sign In</button>
+                    </form>
+                </section>
+            </main>
         </div>
     )
 }

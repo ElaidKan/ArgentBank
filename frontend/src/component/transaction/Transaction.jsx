@@ -1,4 +1,4 @@
-import React from 'react'
+import "./Transaction.scss";
 
 function Transaction() {
     return (

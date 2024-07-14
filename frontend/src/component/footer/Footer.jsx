@@ -1,11 +1,10 @@
 import "./Footer.scss"
 
-function Footer() {
+function Footer({text}) {
     return (
             <footer className="footer">
-                <p className="footer-text">Copyright 2020 Argent Bank</p>
+                <p className="footer-text">{text}</p>
             </footer>
     )
 }
-
 export default Footer

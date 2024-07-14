@@ -6,9 +6,9 @@ import Formulaire from '../component/formulaire/Formulaire'
 function Signin() {
   return (
     <div>
-      <Navbar />
+      <Navbar title={'Argent Bank'} lien={'Sign in'} />
       <Formulaire />
-      <Footer />
+      <Footer text={'Copyright 2020 Argent Bank'} />
     </div>
   )
 }

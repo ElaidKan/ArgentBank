@@ -6,10 +6,10 @@ import Footer from '../component/footer/Footer'
 function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar title={'Argent Bank'} lien={'Sign in'} />
       <Hero />
       <Logo />
-      <Footer />
+      <Footer text={'Copyright 2020 Argent Bank'} />
     </>
   )
 }

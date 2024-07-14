@@ -5,9 +5,9 @@ import Navbar from "../component/navbar/Navbar";
 function Notfound() {
     return (
         <div>
-            <Navbar />
+            <Navbar title={"Argent Bank"} lien={"Sign in"} />
             <Error />
-            <Footer />
+            <Footer text={"Copyright 2020 Argent Bank"} />
 
         </div>
     )

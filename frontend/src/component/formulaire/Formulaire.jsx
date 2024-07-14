@@ -1,5 +1,5 @@
 import './Formulaire.scss'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Formulaire() {
     const navigate = useNavigate()

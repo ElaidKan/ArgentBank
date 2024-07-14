@@ -1,7 +1,7 @@
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ title, lien }) {
     return (
         <div>
             <nav className="main-nav">
@@ -11,12 +11,12 @@ function Navbar() {
                         src="./img/argentBankLogo.png"
                         alt="Argent Bank Logo"
                     />
-                    <h1 className="sr-only">Argent Bank</h1>
+                    <h1 className="sr-only">{title}</h1>
                 </Link>
                 <div>
                     <Link className="main-nav-item" to="./signin">
                         <i className="fa fa-user-circle"></i>
-                        Sign In
+                        {lien}
                     </Link>
                 </div>
             </nav>

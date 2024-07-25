@@ -3,15 +3,15 @@ import "./Transaction.scss";
 function Transaction({ title, amount, description }) {
     return (
         <div>
-            <h2 class="sr-only">Accounts</h2>
-            <section class="account">
-                <div class="account-content-wrapper">
-                    <h3 class="account-title">{title}</h3>
-                    <p class="account-amount">{amount}</p>
-                    <p class="account-amount-description">{description}</p>
+            <h2 className="sr-only">Accounts</h2>
+            <section className="account">
+                <div className="account-content-wrapper">
+                    <h3 className="account-title">{title}</h3>
+                    <p className="account-amount">{amount}</p>
+                    <p className="account-amount-description">{description}</p>
                 </div>
-                <div class="account-content-wrapper cta">
-                    <button class="transaction-button">View transactions</button>
+                <div className="account-content-wrapper cta">
+                    <button className="transaction-button">View transactions</button>
                 </div>
             </section>
         </div>

@@ -20,7 +20,7 @@ try {
 export const profile = createAsyncThunk("user/profile", async () => {
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.post("http://localhost:3001/api/v1/user/profile", {
+        const response = await axios.post("http://localhost:3001/api/v1/user/profile", null, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

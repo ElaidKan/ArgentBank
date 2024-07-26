@@ -9,14 +9,13 @@ import { Navigate } from 'react-router-dom'
 function Account() {
   const connect = useSelector(state => state.connect.connected)
 const token = localStorage.getItem('token')
-  const user = useSelector(state => state.user)
   if (!connect) {
     return <Navigate to='/signin' />
   }
 
   return (
     <div>
-      <Navbar title={'Argent Bank'} lien={token ? 'Sign out' : 'Sign in'} user={token ? user?.userName : ''}/>
+      <Navbar title={'Argent Bank'} lien={token ? 'Sign out' : 'Sign in'} />
       <section className='main bg-dark'>
         <Header />
         {transaction.map((transaction) => (

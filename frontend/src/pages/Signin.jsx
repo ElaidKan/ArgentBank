@@ -5,11 +5,10 @@ import Formulaire from '../component/formulaire/Formulaire'
 import { useSelector } from 'react-redux'
 
 function Signin() {
-  const user = useSelector(state => state.user)
   const token = localStorage.getItem('token')
   return (
     <div>
-      <Navbar title={'Argent Bank'} lien={token ? 'Sign out' : 'Sign in'} user={token ? user?.userName : ''} />
+      <Navbar title={'Argent Bank'} lien={token ? 'Sign out' : 'Sign in'} />
 
       <Formulaire />
       <Footer text={'Copyright 2020 Argent Bank'} />

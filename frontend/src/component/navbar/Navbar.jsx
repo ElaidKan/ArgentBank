@@ -5,10 +5,11 @@ import { useDispatch } from "react-redux";
 import { disconnect } from "../../redux/slice/Connect.slice";
 
 
-function Navbar({ title, lien, user }) {
+function Navbar({ title, lien }) {
     const dispatch = useDispatch();
+    const user = useSelector((state) => state.profil.user);
     const connected = useSelector((state) => state.connect.connected);
-    const disconnect = () => {
+    const disconnected = () => {
         dispatch(disconnect())
     }
     return (
@@ -27,10 +28,10 @@ function Navbar({ title, lien, user }) {
                         <div>
                             <Link className="main-nav-item" to="/account">
                                 <i className="fa fa-user-circle"></i>
-                                {user}
+                                {user?.userName}
                             </Link>
 
-                            <Link className="main-nav-item" to="/" onClick={disconnect}>
+                            <Link className="main-nav-item" to="/" onClick={disconnected}>
                                 <i className="fa fa-user-circle"></i>
                                 {lien}
                             </Link>

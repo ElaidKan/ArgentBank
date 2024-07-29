@@ -35,7 +35,7 @@ export const profile = createAsyncThunk("user/profile", async () => {
 export const changeUserName = createAsyncThunk("user/changeUserName", async ({ newUserName }) => {
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.put(`http://localhost:3001/api/v1/user/profil`,
+        const response = await axios.put(`http://localhost:3001/api/v1/user/profile`,
             { userName: newUserName },
             {
                 headers: {
@@ -47,6 +47,5 @@ export const changeUserName = createAsyncThunk("user/changeUserName", async ({ n
         return response.data.body
     } catch (error) {
         throw new Error(error)
-        console.log(error)
     }
 })

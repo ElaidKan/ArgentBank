@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { useState } from "react"
 import { profile, changeUserName } from "../../services/serviceAPI"
 import "./ViewUser.scss"
 
-function ViewUser({ close, userName, firstName, lastName }) {
+function ViewUser({ close, userName, firstName, lastName, error }) {
     const [newPseudo, setNewPseudo] = useState(userName)
-    const error = useSelector(state => state.changeUserName.error);
     const dispatch = useDispatch();
     const hundelChangeUserName = async (e) => {
         e.preventDefault()
@@ -32,7 +31,7 @@ function ViewUser({ close, userName, firstName, lastName }) {
                     <input className="inputOpacity" id="lastName" type="text" placeholder="Last Name" defaultValue={lastName} readOnly />
                 </div>
 
-                {error && <p className="error">Bonjour</p>}
+                {error && <p className="error">Service indisponible, veuillez reéssayer plus tard</p>}
                 <div className="buttons">
                     <button className="btn">Save</button>
                     <button className="btn" onClick={close}>Cancel</button>

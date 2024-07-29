@@ -7,7 +7,7 @@ import ViewUser from "../viewuser/ViewUser"
 function Header() {
     const [viewProfil, setViewProfil] = useState(false)
     const user = useSelector((state) => state.profil.user)
-
+    const error = useSelector(state => state.editeprofil.error);
     const hundlerViewProfil = () => {
         setViewProfil(!viewProfil)
     }
@@ -20,7 +20,7 @@ function Header() {
                     <button onClick={hundlerViewProfil} className="edit-button">Edit Name</button>
                 </div>
             }
-            {viewProfil && <ViewUser close={hundlerViewProfil} userName={user?.userName} firstName={user?.firstName} lastName={user?.lastName} />}
+            {viewProfil && <ViewUser close={hundlerViewProfil} userName={user?.userName} firstName={user?.firstName} lastName={user?.lastName} error={error}/>}
         </div>
     )
 }
